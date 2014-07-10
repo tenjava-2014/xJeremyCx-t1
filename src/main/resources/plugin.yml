@@ -1,0 +1,3 @@
+name: xJeremyCx-t1
+main: com.tenjava.entries.xJeremyCx.t1.TenJava
+version: '${project.version}'
