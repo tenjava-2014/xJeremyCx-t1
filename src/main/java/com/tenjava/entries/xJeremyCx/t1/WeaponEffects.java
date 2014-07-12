@@ -16,7 +16,7 @@ public class WeaponEffects {
 
     public static void warAxe(Entity target) {
         target.getWorld().playSound(target.getLocation(), Sound.FIREWORK_LAUNCH, 1F, 1F);
-        target.setVelocity(new Vector(0, 30, 0).multiply(2));
+        target.setVelocity(new Vector(0, 15, 0).multiply(2));
     }
 
     public static void multiShoots(Player p) {
