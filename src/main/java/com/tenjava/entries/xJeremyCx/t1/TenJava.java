@@ -2,9 +2,11 @@ package com.tenjava.entries.xJeremyCx.t1;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +21,32 @@ public class TenJava extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new WeaponListener(), this);
+
+        ShapedRecipe waraxe = new ShapedRecipe(ItemsFactory.getWarAxe());
+        waraxe.shape(new String[]{"TRT", "RAR", "TNT"});
+        waraxe.setIngredient('T', Material.TNT);
+        waraxe.setIngredient('R', Material.REDSTONE_BLOCK);
+        waraxe.setIngredient('A', Material.DIAMOND_AXE);
+        waraxe.setIngredient('N', Material.NETHER_BRICK);
+        getServer().addRecipe(waraxe);
+
+        ShapedRecipe multishoots = new ShapedRecipe(ItemsFactory.getMultiShoots());
+        multishoots.shape(new String[]{"AAA", "TBT", "RNR"});
+        multishoots.setIngredient('A', Material.ARROW);
+        multishoots.setIngredient('T', Material.TNT);
+        multishoots.setIngredient('B', Material.BOW);
+        multishoots.setIngredient('R', Material.REDSTONE);
+        multishoots.setIngredient('N', Material.NETHERRACK);
+        getServer().addRecipe(multishoots);
+
+        ShapedRecipe enderstick = new ShapedRecipe(ItemsFactory.getEnderStick());
+        enderstick.shape(new String[]{"TTT", "RSR", "PEP"});
+        enderstick.setIngredient('T', Material.TNT);
+        enderstick.setIngredient('R', Material.REDSTONE_BLOCK);
+        enderstick.setIngredient('S', Material.STICK);
+        enderstick.setIngredient('P', Material.PISTON_STICKY_BASE);
+        enderstick.setIngredient('E', Material.ENDER_STONE);
+        getServer().addRecipe(enderstick);
 
         getLogger().info("Weabomb v" + getDescription().getVersion() + " has been enabled!");
     }
