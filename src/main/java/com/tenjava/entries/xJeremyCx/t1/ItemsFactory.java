@@ -22,13 +22,25 @@ public class ItemsFactory {
         return i;
     }
 
-    public static ItemStack geMultiShoot()
+    public static ItemStack getMultiShoots()
     {
         ItemStack i = new ItemStack(Material.BOW);
         ItemMeta im = i.getItemMeta();
-        im.setDisplayName(ChatColor.GREEN + "MultiShoot");
+        im.setDisplayName(ChatColor.GREEN + "MultiShoots");
         List<String> lore = new ArrayList<String>();
         lore.add(ChatColor.RED + "Target and click to shoot!");
+        i.setItemMeta(im);
+        return i;
+    }
+
+    public static ItemStack getEnderStick()
+    {
+        ItemStack i = new ItemStack(Material.STICK);
+        ItemMeta im = i.getItemMeta();
+        im.setDisplayName(ChatColor.GREEN + "EnderSticks");
+        List<String> lore = new ArrayList<String>();
+        lore.add(ChatColor.RED + "Click a player to use it!");
+        lore.add(ChatColor.DARK_RED + "Causing really high damage!");
         i.setItemMeta(im);
         return i;
     }
