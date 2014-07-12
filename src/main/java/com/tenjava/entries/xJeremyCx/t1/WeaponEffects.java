@@ -16,7 +16,7 @@ public class WeaponEffects {
 
     public static void warAxe(Entity target) {
         target.getWorld().playSound(target.getLocation(), Sound.FIREWORK_LAUNCH, 1F, 1F);
-        target.setVelocity(new Vector(0, 30, 0).multiply(4));
+        target.setVelocity(new Vector(0, 30, 0).multiply(2));
     }
 
     public static void multiShoots(Player p) {
@@ -86,6 +86,20 @@ public class WeaponEffects {
 
                 @Override
                 public void run() {
+
+                    if(e==null || e.isDead()) {
+                        Bukkit.getScheduler().cancelTask(id);
+                        Iterator<String> i = recentStick.iterator();
+                        while (i.hasNext())
+                        {
+                            String uuid1 = i.next();
+                            if(uuid1.equals(uuid))
+                            {
+                                i.remove();
+                            }
+                        }
+                        return;
+                    }
 
                     int x = r.nextInt(8);
                     int y = r.nextInt(6);
