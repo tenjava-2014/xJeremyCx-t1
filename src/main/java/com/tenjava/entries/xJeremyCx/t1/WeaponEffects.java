@@ -106,7 +106,7 @@ public class WeaponEffects {
                     int z = r.nextInt(9);
                     Vector v = new Vector(x, y, z).multiply(2);
                     e.setVelocity(v);
-                    le.damage(7D);
+                    le.damage(5D);
                     e.getWorld().playSound(e.getLocation(), Sound.HURT_FLESH, 1F, 1F);
                     e.getWorld().playEffect(e.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
 
