@@ -1,3 +1,9 @@
 name: Weabomb
 main: com.tenjava.entries.xJeremyCx.t1.TenJava
 version: 1.0.0
+
+commands:
+    weabomb:
+        description: Shows the help menu for Weabomb
+        usage: /weabomb or /weabomb <cmd>
+
