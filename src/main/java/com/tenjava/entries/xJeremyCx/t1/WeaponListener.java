@@ -14,8 +14,6 @@ public class WeaponListener implements Listener {
     @EventHandler
     public void onWeaponUse(EntityDamageByEntityEvent e) {
 
-
-
         if(!(e.getDamager() instanceof Player)) {
             return;
         }
@@ -25,11 +23,13 @@ public class WeaponListener implements Listener {
         if(p.getItemInHand() != null) {
 
             if(p.getItemInHand().equals(ItemsFactory.getWarAxe())) {
+                e.setCancelled(true);
                 WeaponEffects.warAxe(e.getEntity());
                 return;
             }
 
             if(p.getItemInHand().equals(ItemsFactory.getEnderStick())) {
+                e.setCancelled(true);
                 WeaponEffects.enderSticks(p, e.getEntity());
             }
         }
@@ -43,6 +43,7 @@ public class WeaponListener implements Listener {
 
         if(e.getPlayer().getItemInHand() != null) {
             if(e.getPlayer().getItemInHand().equals(ItemsFactory.getMultiShoots())) {
+                e.setCancelled(true);
                 WeaponEffects.multiShoots(e.getPlayer());
                 return;
             }
